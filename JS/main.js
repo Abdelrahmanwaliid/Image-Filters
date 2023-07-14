@@ -6,6 +6,8 @@ const grayscale = document.getElementById("grayscale");
 const blur = document.getElementById("blur");
 const hueRotate = document.getElementById("hue-rotate");
 
+const mainContainer = document.querySelector(".container");
+const filterUl = document.querySelector(".filters ul");
 const download = document.getElementById("download");
 const upload = document.getElementById("upload");
 const img = document.getElementById("img");
@@ -20,6 +22,8 @@ window.onload = function () {
   download.style.display = "none";
   reset.style.display = "none";
   imgBox.style.display = "none";
+  filterUl.style.display = "none";
+  // mainContainer.style.cssText = "position: absolute;top: 50%; left: 50%;";
 };
 
 // Show Elements when upload img
@@ -36,6 +40,9 @@ upload.onchange = function () {
   file.readAsDataURL(upload.files[0]);
   file.onload = function () {
     img.src = file.result;
+    // Show Filters
+    filterUl.style.display = "flex";
+    mainContainer.style.cssText = "grid-template-columns: 5fr 3fr;";
   };
 
   img.onload = function () {

@@ -11,10 +11,10 @@ body {
   max-width: 80vw;
   margin: auto;
   background-color: #222;
-  padding: 20px;
+  padding: 100px 20px;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: 5fr 3fr;
+  /* grid-template-columns: 5fr 3fr; */
 }
 
 .image {
@@ -57,6 +57,7 @@ canvas {
 }
 .filters ul li:last-child {
   flex-direction: row;
+  justify-content: center;
 }
 .filters ul li a,
 span {
@@ -76,14 +77,20 @@ span {
 /* Media Query */
 @media (max-width: 650px) {
   .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 50px;
   }
   .image img,
   canvas {
-    max-width: 80vw;
+    max-width: 70vw;
   }
   .filters ul li {
-    gap: 20px;
+    gap: 15px;
+  }
+  .upload {
+    padding-top: 60px;
+  }
+  .image {
+    gap: 0;
   }
 }
